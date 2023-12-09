@@ -12,7 +12,7 @@
 				<div class="container">
 					<div class="carousel-caption">
 						<h1>ALL BREEDS</h1>
-						
+
 						<p><a class="btn btn-lg btn-darkblue" href="#contato" role="button">Quero saber mais</a></p>
 					</div>
 				</div>
@@ -22,7 +22,7 @@
 				<div class="container">
 					<div class="carousel-caption">
 						<h1 class="text-white">HILLS</h1>
-						
+
 						<p><a class="btn btn-lg btn-darkblue" href="#contato" role="button">Quero saber mais</a></p>
 					</div>
 				</div>
@@ -50,7 +50,7 @@
 
 	<div class="container marketing">
 
-		<!-- Aqui começa meu carrossel de icones -->
+		<!-- Aqui começa os cards -->
 		<div class="row">
 			<div class="col-md-4 mb-1">
 				<div class="d-flex align-items-center justify-content-center mb-3">
@@ -65,10 +65,11 @@
 					Fórmula contém transgênicos
 				</p>
 				<div class="d-flex align-items-center justify-content-center">
-					<p><a class="btn btn-secondary" href="#">Detalhes &raquo;</a></p>
+					<p><a class="btn btn-success" href="products.php">Comprar &raquo;</a></p>
 				</div>
 				<div class="d-flex align-items-center justify-content-center">
-					<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modal1">Visualizar</button>
+					<button type="button" class="btn btn-primary " data-toggle="modal"
+						data-target="#modal1">Visualizar</button>
 				</div>
 			</div><!-- /.col-lg-4 -->
 			<div class="col-md-4 mb-4">
@@ -81,10 +82,11 @@
 					adição de ômegas 3 e 6 para beleza e saúde da pele e pelagem
 				</p>
 				<div class="d-flex align-items-center justify-content-center">
-					<p><a class="btn btn-secondary" href="#">Detalhes &raquo;</a></p>
+					<p><a class="btn btn-success" href="products.php">Comprar &raquo;</a></p>
 				</div>
 				<div class="d-flex align-items-center justify-content-center">
-					<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modal2">Visualizar</button>
+					<button type="button" class="btn btn-primary " data-toggle="modal"
+						data-target="#modal2">Visualizar</button>
 				</div>
 			</div><!-- /.col-lg-4 -->
 			<div class="col-md-4 mb-4">
@@ -92,16 +94,20 @@
 					<img src="img/segunda.png" alt="">
 				</div>
 				<h2 class="d-flex align-items-center justify-content-center mb-3">Ração Friskies</h2>
-				<p class="text-justify">Deliciosa combinação de carne, peru, fígado e frango agora sem corantes artificiais .<br>
-				Trato urinário saudável com 
-				vitaminas e minerais essenciais.
+				<p class="text-justify">Deliciosa combinação de carne, peru, fígado e frango agora sem corantes
+					artificiais .<br>
+					Trato urinário saudável com
+					vitaminas e minerais essenciais.
 				<div class="d-flex align-items-center justify-content-center">
-					<p><a class="btn btn-secondary" href="#">Detalhes &raquo;</a></p>
+					<p><a class="btn btn-success" href="products.php">Comprar &raquo;</a></p>
 				</div>
 				<div class="d-flex align-items-center justify-content-center">
-					<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modal3">Visualizar</button>
+					<button type="button" class="btn btn-primary " data-toggle="modal"
+						data-target="#modal3">Visualizar</button>
 				</div>
-			</div><!-- /.col-lg-4 -->
+
+			</div>
+			<!-- /.col-lg-4 -->
 		</div><!-- /.row -->
 	</div>
 	<section id="projetos" class="row mx-auto justify-content-center"><!-- Aqui começa meus cards de projetos -->
@@ -135,7 +141,7 @@
 			</div>
 		</div>
 	</section>
-	
+
 
 	<!-- Aqui começa o meu Modal 1 -->
 	<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
