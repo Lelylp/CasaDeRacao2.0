@@ -24,7 +24,7 @@
 			padding: 20px;
 			margin: 5%;
 			max-width: 400px;
-			/* Ajuste o tamanho conforme necessário */
+			/* Ajuste do tamanho se precisar mas acho que nao precisa */
 			width: 100%;
 			text-align: center;
 			border-radius: 10px;

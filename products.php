@@ -11,7 +11,7 @@
         <div id="products-container" class="row">
             <!-- Aqui vão os cards de produtos -->
             <?php
-            // Exemplo de dados de produtos (substitua por dados reais do seu banco de dados)
+            // Exemplo de dados de produtos (pode adicionar os dados reais do banco de dados)
             $products = array(
                 array("img\Racao Premier.png", "Ração Premier Ambientes Internos Demacare Cães Adultos Raças Pequenas Sabor Salmão", "1 Kg - Cães caseiros - Possui Ômegas 3 e 6 e Zinco ", 104.89),
                 array("img\Racao Golden.png", "Ração Golden para Gatos Adultos Castrados Sabor Salmão", "10,1kg Premier Pet Adulto", 170.99),
@@ -21,7 +21,7 @@
                 array("img\Racao Excellence.png", "Ração Excellence para Cães Adultos de Raças Médias", "15 Kg - Faixa etaria bebê", 257.50),
                 array("img\Racao Hills.png", "Ração Hill's Science Diet para Cães Adultos 7+ Pedaços Pequenos", "6 Kg - Faixa etária Sênior - Sabor Frango", 349.40),
                 array("img\Racao Fri Dog.png", "Fri Dog Vegetariana", "15 Kg - Alívio de alergias - Formato de grânulos", 338.00),
-                // Adicione mais produtos conforme necessário
+                // Adicionar mais produtos aqui se quiser
             );
 
             foreach ($products as $product) {
@@ -68,9 +68,9 @@
             // Reiniciar a quantidade no campo de input
             quantityElement.value = 0;
 
-            // Adicionar lógica para adicionar ao carrinho (pode ser uma requisição AJAX para o servidor, por exemplo)
-            // Aqui você pode enviar dados como o nome do produto, quantidade, etc., para o servidor
-            // e atualizar o carrinho no backend, se necessário.
+            // Adicionar lógica para adicionar ao carrinho (pode ser uma requisição AJAX ou JSON para o servidor, por exemplo)
+            // Aqui da para enviar dados como o nome do produto, quantidade, etc., para o servidor
+            // e atualizar o carrinho no backend.
         }
     }
 
@@ -88,14 +88,14 @@
     }
 
     function getProductPrice(productName) {
-        // Adicione a lógica para obter o preço do produto com base no nome (pode ser uma consulta ao banco de dados, por exemplo)
-        // Este é um exemplo estático. Substitua com sua lógica real.
+        // Adicionar aqui a lógica para obter o preço do produto com base no nome (pode ser uma consulta ao banco de dados, por exemplo)
+        // Aqui esta com exemplo estatico para usar como referencia
         const productPrices = {
             'Produto 1': 10.99,
             'Produto 2': 15.99,
             'Produto 3': 20.99,
             'Produto 4': 12.99,
-            // Adicione mais produtos conforme necessário
+            // Adicionar mais produtos se quiser
         };
 
         return productPrices[productName] || 0;
