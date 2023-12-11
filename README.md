@@ -2,7 +2,7 @@
 
 # Introdução
 
-Este projeto fullstack foi desenvolvido como parte de um curso acadêmico na disciplina de Programação para Web. Utilizou-se PHP e Bootstrap como principais tecnologias de estudo. Uma das características-chave deste projeto é a aplicação do PHP Data Objects (PDO) no backend para interação segura e eficiente com o banco de dados.
+Este projeto fullstack foi desenvolvido como objeto de estudo da Faculdade na disciplina de Programação para Web. Utilizou-se PHP e Bootstrap como principais tecnologias de estudo. Uma das características-chave deste projeto é a aplicação do PHP Data Objects (PDO) no backend para interação segura e eficiente com o banco de dados.
 
 # PDO (PHP Data Objects)
 
