@@ -9,38 +9,40 @@
         </div>
 
         <div id="products-container" class="row">
-            <!-- Aqui vão os cards de produtos -->
             <?php
-            // Exemplo de dados de produtos (pode adicionar os dados reais do banco de dados)
-            $products = array(
-                array("img\Racao Premier.png", "Ração Premier Ambientes Internos Demacare Cães Adultos Raças Pequenas Sabor Salmão", "1 Kg - Cães caseiros - Possui Ômegas 3 e 6 e Zinco ", 104.89),
-                array("img\Racao Golden.png", "Ração Golden para Gatos Adultos Castrados Sabor Salmão", "10,1kg Premier Pet Adulto", 170.99),
-                array("img\Racao Friskies.png", "Nestlé Purina Friskies Ração Seca Para Gatos Adultos", "Mix De Carnes 3Kg", 48.99),
-                array("img\Teste Card do Carrinho.png", "Ração Champ Carne e Cereal Para Cães Adultos", "20 Kg - Estômago sensível - Sabor Carne", 57.50),
-                array("img\Racao Atakama.png", "Ração Atacama Todas as Raças para Cães Adultos", "14 Kg - Condroitina e Glicosamina, promovem benefícios articulares.", 157.50),
-                array("img\Racao Excellence.png", "Ração Excellence para Cães Adultos de Raças Médias", "15 Kg - Faixa etaria bebê", 257.50),
-                array("img\Racao Hills.png", "Ração Hill's Science Diet para Cães Adultos 7+ Pedaços Pequenos", "6 Kg - Faixa etária Sênior - Sabor Frango", 349.40),
-                array("img\Racao Fri Dog.png", "Fri Dog Vegetariana", "15 Kg - Alívio de alergias - Formato de grânulos", 338.00),
-                // Adicionar mais produtos aqui se quiser
-            );
+            $host = "localhost";
+            $db = "base_php";
+            $user = "postgre";
+            $pass = "";
 
-            foreach ($products as $product) {
-                echo '<div class="col-md-3 mb-4">';
-                echo '<div class="card">';
-                echo '<img src="' . $product[0] . '" class="card-img-top" alt="Produto">';
-                echo '<div class="card-body">';
-                echo '<h5 class="card-title">' . $product[1] . '</h5>';
-                echo '<p class="card-text">' . $product[2] . '</p>';
-                echo '<p class="card-text">R$ ' . number_format($product[3], 2) . ' por unidade</p>';
-                echo '<div class="input-group mb-3">';
-                echo '<button class="btn btn-outline-secondary" type="button" onclick="updateCart(1, \'' . $product[1] . '\')">+</button>';
-                echo '<input type="text" class="form-control text-center" id="quantity-' . $product[1] . '" value="0" readonly>';
-                echo '<button class="btn btn-outline-secondary" type="button" onclick="updateCart(-1, \'' . $product[1] . '\')">-</button>';
-                echo '</div>';
-                echo '<button class="btn btn-primary" onclick="addToCart(\'' . $product[1] . '\')">Adicionar ao Carrinho</button>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
+            try {
+                $pdo = new PDO("pgsql:host=$host;dbname=$db", $user, $pass);
+
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                $stmt = $pdo->query('SELECT img_path, nome, descricao, preco FROM produtos');
+                $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                foreach ($products as $product) {
+                    echo '<div class="col-md-3 mb-4">';
+                    echo '<div class="card">';
+                    echo '<img src="' . $product['img_path'] . '" class="card-img-top" alt="Produto">';
+                    echo '<div class="card-body">';
+                    echo '<h5 class="card-title">' . $product['nome'] . '</h5>';
+                    echo '<p class="card-text">' . $product['descricao'] . '</p>';
+                    echo '<p class="card-text">R$ ' . number_format($product['preco'], 2) . ' por unidade</p>';
+                    echo '<div class="input-group mb-3">';
+                    echo '<button class="btn btn-outline-secondary" type="button" onclick="updateCart(1, \'' . $product['nome'] . '\')">+</button>';
+                    echo '<input type="text" class="form-control text-center" id="quantity-' . $product['nome'] . '" value="0" readonly>';
+                    echo '<button class="btn btn-outline-secondary" type="button" onclick="updateCart(-1, \'' . $product['nome'] . '\')">-</button>';
+                    echo '</div>';
+                    echo '<button class="btn btn-primary" onclick="addToCart(\'' . $product['nome'] . '\')">Adicionar ao Carrinho</button>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            } catch(PDOException $e) {
+                echo "Erro: " . $e->getMessage();
             }
             ?>
         </div>
@@ -48,6 +50,7 @@
 </main>
 
 <?php include "footer.php"; ?>
+
 
 <script>
     // Script para interatividade do carrinho
